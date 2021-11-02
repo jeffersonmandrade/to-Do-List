@@ -5,7 +5,7 @@ const middlewaresErrors = require('../middlewares/error')
 const PORT = 3001;
 app.use(express.json());
 
-app.use('/login',loginRoute)
+app.use('/login',logiRoute)
 
 
 
