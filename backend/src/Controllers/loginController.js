@@ -1,13 +1,15 @@
+const rescue = require('express-rescue')
 const loginService = require('../Services/LoginService')
 
-const createUser = async(req,res,next) => {
+
+const createUser = rescue(async(req,res,next) => {
 const {email, password } = req.body
 const newUser = await loginService.createUser(email,password);
 if(!newUser){
-  next('usuarioExistente')
+ return  next("userAlreadyExist")
 }
 res.status(201).json(newUser)
-}
+})
 
 const findUser = async  (req,res,next) => {
   const {email, password } = req.body
