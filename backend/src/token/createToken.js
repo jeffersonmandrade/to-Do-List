@@ -8,6 +8,11 @@ const jwtConfig = {
   algorithm: 'HS256',
 }
 
-const createToken = (email,password) =>  jwt.sign({email,password},SECRET, jwtConfig)
+const createToken = (body) => {
+  const{email, _id:id} = body
+  console.log(email,id)
+  return jwt.sign({email,id},SECRET, jwtConfig)
+
+}
 
 module.exports = {createToken}
