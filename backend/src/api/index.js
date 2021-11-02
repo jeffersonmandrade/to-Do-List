@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const loginRoute = require('../Routes/loginRoute')
+const logiRoute = require('../Routes/loginRoute')
 const middlewaresErrors = require('../middlewares/error')
 const PORT = 3001;
 app.use(express.json());
