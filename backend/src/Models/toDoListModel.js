@@ -15,10 +15,10 @@ const findAllUser = async(idUser) => {
 }
 
 const updateTask = async(id, body) => {
+  const db = await connection();
   if (!ObjectId.isValid(id)) {
     return null;
   }
-const db = await connection();
 const { value } = db.collection('toDolist').findOneAndUpdate(
   {_id: ObjectId(id)},
   {$set: body},
