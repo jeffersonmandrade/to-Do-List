@@ -9,5 +9,7 @@ const router = express.Router();
 router.route('/')
   .post(validateJWT,createTask)
   .get(validateJWT, findAllUser)
+  .put(validateJWT)
+  .delete(validateJWT)
 
   module.exports = router;
