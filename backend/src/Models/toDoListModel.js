@@ -7,12 +7,13 @@ const createTask = async(body) => {
   return ops[0]
 }
 
-const findAll = async(idUser) => {
+const findAllUser = async(idUser) => {
   const db = await connection();
   const findAll = await db.collection('toDoList').find({idUser}).toArray();
   return findAll;
 }
 
 module.exports = {
-  createTask
+  createTask,
+  findAllUser,
 }

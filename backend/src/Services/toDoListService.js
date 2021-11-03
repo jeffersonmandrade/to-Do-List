@@ -9,6 +9,12 @@ const create = await toDoListModel.createTask(body);
 return create;
 }
 
+const findAllUser  = async(idUser) => {
+  const findAll = await toDoListModel.findAllUser (idUser)
+  return findAll
+}
+
 module.exports = {
-  createTask
+  createTask,
+  findAllUser
 }
