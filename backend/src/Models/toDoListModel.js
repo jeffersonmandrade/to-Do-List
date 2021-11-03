@@ -1,3 +1,4 @@
+const { ObjectId } = require('mongodb');
 const connection = require('./connection');
 
 const createTask = async(body) => {
@@ -13,7 +14,23 @@ const findAllUser = async(idUser) => {
   return findAll;
 }
 
+const updateTask = async(id, body) => {
+  if (!ObjectId.isValid(id)) {
+    return null;
+  }
+const db = await connection();
+const { value } = db.collection('toDolist').findOneAndUpdate(
+  {_id: ObjectId(id)},
+  {$set: body},
+  { retrunDocument: "after"},
+
+)
+return value
+
+}
+
 module.exports = {
   createTask,
   findAllUser,
+  updateTask,
 }
