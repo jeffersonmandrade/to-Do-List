@@ -1,10 +1,6 @@
 const rescue  = require('express-rescue');
 const Joi = require('joi');
 
-
-
-
-
 module.exports = rescue(async(req, res,next) => {
 const{ email, password } = req.body
 const {error} = Joi.object({

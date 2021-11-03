@@ -14,10 +14,10 @@ const validateJWT = async (req,_res,next) => {
       next('expiredToke')
     }
     if(decoded){
-      const{_id, email} = decode;
-      req.user = {_id, email};
+      const{id, email} = decoded;
+      req.user = {id, email};
     }
   })
   next()
 }
-module.exports = { validateJWT}
+module.exports = { validateJWT }

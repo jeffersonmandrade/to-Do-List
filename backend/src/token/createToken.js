@@ -9,6 +9,7 @@ const jwtConfig = {
 }
 
 const createToken = (body) => {
+
   const{email, _id:id} = body
   return jwt.sign({email,id},SECRET, jwtConfig)
 
