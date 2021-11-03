@@ -18,8 +18,7 @@ const findUser = async  (req,res,next) => {
   if(!user){
     return next("userDoesntExist")
   }
-  const token = await  createToken(user);
-  console.log(token)
+  const token =  createToken(user);
   res.status(200).json({token})
 }
 

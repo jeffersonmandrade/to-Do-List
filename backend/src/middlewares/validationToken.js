@@ -8,11 +8,16 @@ const validateJWT = async (req,_res,next) => {
     next('validationJWT')
   }
 
-  jwt.verify(authorization,SECRET,(err,_decoded) => {
+  jwt.verify(authorization,SECRET,(err,decoded) => {
 
     if(err){
       next('expiredToke')
     }
+    if(decoded){
+      const{_id, email} = decode;
+      req.user = {_id, email};
+    }
   })
   next()
 }
+module.exports = { validateJWT}
