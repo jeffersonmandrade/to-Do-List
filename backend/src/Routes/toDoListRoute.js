@@ -8,5 +8,6 @@ const router = express.Router();
 
 router.route('/')
   .post(validateJWT,createTask)
+  .get(validateJWT)
 
   module.exports = router;
