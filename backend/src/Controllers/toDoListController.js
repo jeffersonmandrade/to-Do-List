@@ -26,6 +26,7 @@ const updateTask = async (req, res, next) => {
 };
 
 const deleteTask = async (req, res, next) => {
+  console.log('cheguei')
   const { _id: id } = req.body;
   const deleteData = await toDoListService.deleteTask(id);
   res.status(200).json(deleteData);

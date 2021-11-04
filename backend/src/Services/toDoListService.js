@@ -22,6 +22,7 @@ return update;
 }
 
 const deleteTask = async(id) => {
+
   const deleteData = await toDoListModel.deleteTask(id);
   return deleteData;
 }

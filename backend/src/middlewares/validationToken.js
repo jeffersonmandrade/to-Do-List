@@ -3,6 +3,7 @@ const  jwt = require('jsonwebtoken');
 const SECRET = '123456';
 
 const validateJWT = async (req,_res,next) => {
+  console.log('cheguei')
   const { authorization } = req.headers;
   if(!authorization){
     next('validationJWT')
