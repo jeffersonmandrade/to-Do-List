@@ -11,7 +11,7 @@ router.route('/')
 .post(validateJWT,createTask)
 .get(validateJWT, findAllUser)
 .put(validateJWT, updateTask)
-.delete(validateJWT, deleteTask)
+.delete(validateJWT,deleteTask)
 
 
   module.exports = router;
