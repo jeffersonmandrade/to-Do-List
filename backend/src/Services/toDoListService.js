@@ -21,8 +21,14 @@ const update = await  toDoListModel.updateTask(id,body)
 return update;
 }
 
+const deleteTask = async(id) => {
+  const deleteData = await toDoListModel.deleteTask(id);
+  return deleteData;
+}
+
 module.exports = {
   createTask,
   findAllUser,
-  updateTask
+  updateTask,
+  deleteTask,
 }
