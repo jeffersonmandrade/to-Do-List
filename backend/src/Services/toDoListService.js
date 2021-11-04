@@ -15,7 +15,7 @@ const findAllUser  = async(idUser) => {
 
 const updateTask = async(email, idUser, task, status,id) => {
 const date = new Date();
-const createDate = date.toLocaleDateString();
+const createDate = date.toLocaleString();
 const body = { email,task,idUser, status,createDate };
 const update = await  toDoListModel.updateTask(id,body)
 return update;

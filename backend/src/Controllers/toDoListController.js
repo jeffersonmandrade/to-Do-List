@@ -18,13 +18,14 @@ return findAll
 const updateTask = async(req,res,next) => {
 const {id} = req.user;
   const {email,task,status,_id} = req.body
-  const update = await toDoListService.updateTask(email,id,task,status,_id)
-  return update;
+  const update = await toDoListService.updateTask(email,id,task,status,_id).catch(erro => console.log(erro))
+  res.status(200).json(update)
 }
 
 
 
 module.exports = {
   createTask,
-  findAllUser
+  findAllUser,
+  updateTask
 }

@@ -15,17 +15,18 @@ const findAllUser = async(idUser) => {
 }
 
 const updateTask = async(id, body) => {
+  // if (!ObjectId.isValid(id)) {
+  //   return null;
+  // }
+  console.log(id)
   const db = await connection();
-  if (!ObjectId.isValid(id)) {
-    return null;
-  }
-const { value } = db.collection('toDolist').findOneAndUpdate(
-  {_id: ObjectId(id)},
-  {$set: body},
-  { retrunDocument: "after"},
-
-)
-return value
+  const {value} = await db.collection('toDoList').findOneAndUpdate(
+    { _id: ObjectId(id) },
+    {$set: body},
+    { returnOriginal: false },
+  )
+console.log(value)
+return value;
 
 }
 

@@ -18,6 +18,7 @@ const validateJWT = async (req,_res,next) => {
       req.user = {id, email};
     }
   })
+
   next()
 }
 module.exports = { validateJWT }
