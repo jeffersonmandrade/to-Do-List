@@ -22,10 +22,16 @@ const {id} = req.user;
   res.status(200).json(update)
 }
 
+const deleteTask = async(req,res,next) => {
+  const{_id: id} = req.body
+  // const delete = await
+}
+
 
 
 module.exports = {
   createTask,
   findAllUser,
-  updateTask
+  updateTask,
+  deleteTask
 }
